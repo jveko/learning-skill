@@ -1,8 +1,8 @@
 import Link from "next/link"
-import { Command } from "lucide-react"
+import {Command} from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import {cn} from "@/lib/utils"
+import {buttonVariants} from "@/components/ui/button"
 
 import SignUpForm from "./signupForm"
 
@@ -16,17 +16,17 @@ export default function Page() {
         <Link
           href='/login'
           className={cn(
-            buttonVariants({ variant: "ghost" }),
+            buttonVariants({variant: "ghost"}),
             "absolute right-4 top-4 md:right-8 md:top-8",
           )}
         >
           Login
         </Link>
         <div className='relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex'>
-          <div className='absolute inset-0 bg-zinc-900' />
+          <div className='absolute inset-0 bg-zinc-900'/>
           <div className='relative z-20 flex items-center text-lg font-medium'>
-            <Command size={24} className='mr-2' />
-            Acme Inc
+            <Command size={24} className='mr-2'/>
+            Learning Skill
           </div>
           <div className='relative z-20 mt-auto'>
             <blockquote className='space-y-2'>
@@ -50,7 +50,7 @@ export default function Page() {
               </p>
             </div>
             <div className={cn("grid gap-6")}>
-              <SignUpForm />
+              <SignUpForm/>
             </div>
             <p className='px-8 text-center text-sm text-muted-foreground'>
               By clicking continue, you agree to our{" "}

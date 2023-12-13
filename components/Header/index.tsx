@@ -1,20 +1,19 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { Menu } from "lucide-react"
-import { User } from "next-auth"
+import React, {useEffect, useRef, useState} from "react"
+import {Menu} from "lucide-react"
 
-import { cn } from "@/lib/utils"
+import {cn} from "@/lib/utils"
 
 import CommandMenu from "../CommandMenu"
 import MobileSidebar from "../MobileSidebar"
-import { Button } from "../ui/button"
+import {Button} from "../ui/button"
 
 interface Props {
   children?: React.ReactNode
 }
 
-export default function Header({ children }: Props) {
+export default function Header({children}: Props) {
   const navRef = useRef(null)
   const [scroll, setScroll] = useState(false)
   const [open, setOpen] = useState(false)
@@ -54,16 +53,16 @@ export default function Header({ children }: Props) {
             size='icon'
             onClick={() => setOpen(true)}
           >
-            <Menu size={24} />
+            <Menu size={24}/>
           </Button>
 
-          <CommandMenu />
+          <CommandMenu/>
         </div>
 
         <div className='flex items-center gap-4'>{children}</div>
       </div>
 
-      <MobileSidebar open={open} onOpenChange={setOpen} />
+      <MobileSidebar open={open} onOpenChange={setOpen}/>
     </>
   )
 }
