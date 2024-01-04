@@ -1,30 +1,22 @@
-import { CreditCard, DollarSign, LineChart, Users } from "lucide-react"
+import { getCookies } from "next-client-cookies/server"
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-
-import { CardsChat } from "./components/chat"
-import OverviewBar from "./components/overviewBar"
-import PieChartAnalytics from "./components/pieChart"
-import RecentSale from "./components/recentSale"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface Props {}
 export default function Page({}: Props) {
+  const cookies = getCookies()
   return (
     <div className='space-y-8'>
       <div className='flex justify-between'>
-        <h1 className='text-4xl font-bold'>Welcome, Alfaridza</h1>
+        <h1 className='text-4xl font-bold'>
+          Welcome, {cookies.get("userName")}
+        </h1>
       </div>
 
       <div className='space-y-4'>
         <div className='grid grid-cols-2 gap-4 xl:grid-cols-4'>
           <Card>
-            <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
+            <CardHeader className='flex flex-row items-center justify-between pb-2 space-y-0'>
               <CardTitle className='text-sm font-medium'>
                 Courses Complete
               </CardTitle>
@@ -40,7 +32,7 @@ export default function Page({}: Props) {
           </Card>
 
           {/*<Card>*/}
-          {/*  <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>*/}
+          {/*  <CardHeader className='flex flex-row items-center justify-between pb-2 space-y-0'>*/}
           {/*    <CardTitle className='text-sm font-medium'>Sales</CardTitle>*/}
           {/*    <CreditCard size={16} className='text-muted-foreground' />*/}
           {/*  </CardHeader>*/}
@@ -53,7 +45,7 @@ export default function Page({}: Props) {
           {/*  </CardContent>*/}
           {/*</Card>*/}
           {/*<Card>*/}
-          {/*  <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>*/}
+          {/*  <CardHeader className='flex flex-row items-center justify-between pb-2 space-y-0'>*/}
           {/*    <CardTitle className='text-sm font-medium'>Active Now</CardTitle>*/}
           {/*    <LineChart size={16} className='text-muted-foreground' />*/}
           {/*  </CardHeader>*/}
@@ -66,7 +58,7 @@ export default function Page({}: Props) {
           {/*  </CardContent>*/}
           {/*</Card>*/}
           {/*<Card>*/}
-          {/*  <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>*/}
+          {/*  <CardHeader className='flex flex-row items-center justify-between pb-2 space-y-0'>*/}
           {/*    <CardTitle className='text-sm font-medium'>*/}
           {/*      Subscriptions*/}
           {/*    </CardTitle>*/}

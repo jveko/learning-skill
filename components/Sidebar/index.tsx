@@ -85,16 +85,11 @@ const menu: SidebarNavItem[] = [
   //   ],
   // },
   {
-    title: "Courses",
+    title: "Classes",
     items: [
       {
-        title: "New Class",
-        href: "/dashboard/surfaces",
-        icon: <FormInput size={16}/>,
-      },
-      {
-        title: "Class Completed",
-        href: "/dashboard/navigation",
+        title: "Enrolled",
+        href: "/classes/enroll",
         icon: <FormInput size={16}/>,
       },
     ]
@@ -137,13 +132,13 @@ export default function Sidebar({className, onClick}: SidebarProps) {
 
   return (
     <div className={cn("flex h-full w-[240px] flex-col", className)}>
-      <div className='flex h-16 w-full items-center justify-center gap-2 border-b text-lg font-medium'>
+      <div className='flex items-center justify-center w-full h-16 gap-2 text-lg font-medium border-b'>
         <BookmarkIcon className='h-9 w-9'/> Learning Skill
       </div>
       <div className='py-4'>
         {menu.map((item, index) => (
           <div key={index} className='px-3 py-2'>
-            <h2 className='mb-2 px-4 text-lg font-semibold tracking-tight'>
+            <h2 className='px-4 mb-2 text-lg font-semibold tracking-tight'>
               {item.title}
             </h2>
             {item.items ? (
@@ -187,7 +182,7 @@ function SidebarItems({
             {item.title}
           </Link>
         ) : (
-          <span className='flex w-full cursor-not-allowed items-center rounded-md p-2 opacity-60'>
+          <span className='flex items-center w-full p-2 rounded-md cursor-not-allowed opacity-60'>
               {item.title}
             </span>
         )}

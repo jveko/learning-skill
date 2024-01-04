@@ -5,7 +5,7 @@ import Header from "@/components/Header"
 import Sidebar from "@/components/Sidebar"
 import SwitchMode from "@/components/SwitchMode"
 
-export default async function AdminLayout({
+export default async function ClassesLayout({
   children,
 }: {
   children: React.ReactNode
